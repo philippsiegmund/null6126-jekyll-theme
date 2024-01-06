@@ -1,0 +1,20 @@
+<div class="hero container">  
+  <div class="hero-main">
+    <h1 class="hero-main__text">{{ page.title }}</h1>
+  </div>
+  <div class="hero-media">
+  </div>
+  <div class="hero-context">
+    <div class="hero-context__text">
+      {{ page.description }}
+    </div>
+    <div class="hero-context__meta">
+      <div class="hero-context__meta__author">
+        <img class="hero-context__meta__author__image" src="{{ page.author.image }}" alt="{{ page.author.name }}">
+        <div class="hero-context__meta__author__name">{{ page.author.name }}</div>
+      </div>
+      <div class="hero-context__meta__date">{{ page.date | date: '%b %d, %Y' }}</div>
+    </div>
+  </div>
+  
+</div>

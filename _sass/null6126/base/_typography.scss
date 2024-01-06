@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+$primary-font: 'Quanta Grotesk Pro', sans-serif;
+$text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+body, html {
+  font-family: $text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $primary-font;
+}
+
+// a {
+//   color: $primary-color;
+//   font-family: $text-font;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }
+
+.navbar {
+  .navbar-brand {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-transform: lowercase;
+    text-decoration: none;
+    text-shadow: -1px 0 $secondary-color, 0 1px $secondary-color, 1px 0 $secondary-color, 0 -1px $secondary-color;
+  }
+  .menu-icon__flag {
+    font-family: $text-font;
+    font-size: .7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+  .navbar-nav {
+    li {
+      a.nav-link {
+        text-decoration: none;
+        color: $primary-color;
+        font-family: $primary-font;
+        font-size: 2rem;
+        font-weight: normal;
+        text-transform: lowercase;
+        letter-spacing: 0.2rem;
+        transition: font-size 0.2s ease-in-out;
+        &:hover {
+          text-shadow: 0 0 12px $primary-color;
+        }
+      }
+    }
+  }
+}

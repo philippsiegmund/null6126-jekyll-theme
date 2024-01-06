@@ -1,0 +1,160 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+@use '../layout/breakpoints' as *;
+
+$icon-size: 30px;
+
+.navbar {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+
+  @include for-size(tablet,up) {
+    top: 0;
+    bottom: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
+
+    padding: 1rem 1.5rem;
+    z-index: 1;
+
+    .menu-icon {
+      height: $icon-size;
+      width: $icon-size;
+      z-index:2;
+      cursor: pointer;
+
+      &__flag { 
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+
+        width: calc($icon-size * 9);
+        right: calc($icon-size * -4.5 + $icon-size);
+        animation: spin 20s linear infinite;
+
+        @include for-size(tablet,down) {
+          width: calc($icon-size * 5.5);
+          right: calc($icon-size * -2.75 + $icon-size);
+          animation: spin 30s linear infinite;
+        }
+
+        span {
+          width: 50%;
+        }
+        span:nth-child(2) {
+          transform: rotate(-180deg);
+        }
+        
+        &__contra {
+          width: calc($icon-size * 5.5);
+          right: calc($icon-size * -2.75 + $icon-size);
+          animation: spin 15s linear infinite reverse; 
+        }
+      }
+
+      &__line{
+        height: 2px;
+        width: $icon-size;
+        display: block;
+        background-color: $primary-color;
+        margin-bottom: 4px;
+        transition: transform .2s ease, background-color .7s ease, width .2s ease;
+      }
+      &__line-right{
+        float: right;
+      }
+      .menu-icon__line-left, .menu-icon__line-right {
+        width: calc($icon-size / 2);
+      }
+      &:hover{
+        .menu-icon__line-left, .menu-icon__line-right {
+          width: $icon-size;
+        }
+        .menu-icon__flag {
+          animation-play-state: paused;
+        }
+      }
+    }
+  } // .container
+
+  .navbar-content {
+    display: flex;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: $secondary-color;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.555s ease-in-out, visibility 1s linear 1s;
+    opacity: 0;
+    top: 0;
+    left: 0;
+
+    ul.navbar-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+
+      li.nav-item {
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  } // .navbar-content
+
+  &.active {
+    .navbar-content {
+      visibility: visible;
+      opacity: 1.0;
+    }
+    .container .menu-icon{
+      &__line{
+        background-color: $primary-color;
+        transform: translateX(0px) rotate(-45deg);
+      }
+      &__line-left{
+        transform: translateY(6px) rotate(45deg);
+        width: calc($icon-size / 2);
+      }
+      &__line-right{
+        transform: translateY(-6px) rotate(45deg);
+        width: calc($icon-size / 2);
+      }
+      &__flag {
+        span::before {
+          position: absolute;
+          top: -15px;
+          content: 'close';
+        }
+      }
+
+      .container .menu-icon:hover{
+        .menu-icon__line-left, .menu-icon__line-right {
+          width: $icon-size;
+        }
+        .menu-icon__flag {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+} // .navbar
+
+@keyframes spin { 
+  100% { transform: rotate(-360deg); }
+}

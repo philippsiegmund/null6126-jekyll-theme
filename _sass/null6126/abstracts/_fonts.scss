@@ -1,0 +1,37 @@
+// Headlines and bold things
+@font-face {
+    font-family: 'Quanta Grotesk Pro';
+    src: url('/assets/fonts/QuantaGroteskPro-Bold.eot');
+    src: url('/assets/fonts/QuantaGroteskPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/QuantaGroteskPro-Bold.woff2') format('woff2'),
+        url('/assets/fonts/QuantaGroteskPro-Bold.woff') format('woff'),
+        url('/assets/fonts/QuantaGroteskPro-Bold.svg#QuantaGroteskPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quanta Grotesk Pro';
+    src: url('/assets/fonts/QuantaGroteskPro-Regular.eot');
+    src: url('/assets/fonts/QuantaGroteskPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/QuantaGroteskPro-Regular.woff2') format('woff2'),
+        url('/assets/fonts/QuantaGroteskPro-Regular.woff') format('woff'),
+        url('/assets/fonts/QuantaGroteskPro-Regular.svg#QuantaGroteskPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quanta Grotesk Pro';
+    src: url('/assets/fonts/QuantaGroteskPro-Light.eot');
+    src: url('/assets/fonts/QuantaGroteskPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/QuantaGroteskPro-Light.woff2') format('woff2'),
+        url('/assets/fonts/QuantaGroteskPro-Light.woff') format('woff'),
+        url('/assets/fonts/QuantaGroteskPro-Light.svg#QuantaGroteskPro-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,18 @@
+<!-- Navbar -->
+<nav class="topnav navbar fixed-top">
+  <div class="container">
+      <a class="navbar-brand" href="{{ site.baseurl }}/index.html"><strong>{{site.name}}</strong></a>
+      <div class="menu-icon">
+        <span class="menu-icon__flag"><span>Menu</span><span>Menu</span></span>
+        <span class="menu-icon__flag menu-icon__flag__contra"><span>Menu</span><span>Menu</span></span>
+        <span class="menu-icon__line menu-icon__line-left"></span>
+        <span class="menu-icon__line"></span>
+        <span class="menu-icon__line menu-icon__line-right"></span>
+      </div>
+  </div>
+  <div class="navbar-content">
+    <ul class="navbar-nav">
+      {% include top-menu.html %}
+    </ul>
+  </div>
+</nav>

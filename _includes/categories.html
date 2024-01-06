@@ -1,0 +1,23 @@
+<div id="category-display" class="">
+  {% for category in site.categories %}
+    <div class="category-display-group">
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div class="category-display-group-title">
+        <span class="category-display-group-title__icon more">
+          +
+        </span>
+        <h3 class="category-display-group-title__text">
+          <a href="{{ site.baseurl }}/{{ category_name }}">
+            {{ category_name }}
+          </a>
+        </h3>
+        <span class="category-display-group-title__icon goto">&raquo;</span>
+      </div>
+      {% for post in site.categories[category_name] %}
+      <article class="category-display-item">
+        <a class="category-display-item__title" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+      </article>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

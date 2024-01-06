@@ -1,0 +1,17 @@
+@use '../layout/breakpoints' as *;
+
+.container {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  @include for-size(phone,up) {
+    width: 720px;
+  }
+  @include for-size(tablet-lg,up) {
+    width: 920px;
+  }
+  @include for-size(desktop-lg,up) {
+    width: 1420px;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{page.title}} | {{site.name}}</title>
+
+    {% seo %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    
+    {% include head.html %}
+
+</head>
+
+<body class="{% if page.url == "/" %} home {% endif %}">
+
+    {% include navigation.html %}
+
+    <!-- Search Results -->
+    <div id="lunrsearchresults">
+        <ul class="mb-0"></ul>
+    </div>
+
+    <main role="main" class="site-content">
+      {% include hero.html %}
+      
+      {% include below-hero.html %}
+      
+
+      {% include categories.html %}
+      
+      <!-- Content -->
+      {{ content }}
+    </main>
+
+     <!-- Footer -->
+    <footer class="bg-white border-top p-3 text-muted small">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div>
+            <span class="navbar-brand mr-2 mb-0"><strong>null6126</strong></span>
+            <span>© 2023-><script>document.write(new Date().getFullYear())</script>.</span>
+            <a class="text-dark ml-1" target="_blank" href="{{site.repository}}"><i class="fab fa-github"></i> Fork on Github</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="{{ site.baseurl }}{% link assets/js/theme.js %}"></script>
+    {% include below-footer.html %}
+</body>
+
+</html>

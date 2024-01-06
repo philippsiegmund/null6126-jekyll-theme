@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+@use '../layout/breakpoints' as *;
+@use '../base/typography' as *;
+
+
+// Layout
+
+.hero {
+  height: 100dvh;
+  padding: 1.5rem;
+  margin: 0 auto;
+  
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.33fr 0.16fr;
+  grid-template-areas: 
+      "main"
+      "media"
+      "context";
+
+  &-main {  
+    grid-area: main;
+    display: flex;
+    align-items: end;
+  }
+  
+  &-media {
+    grid-area: media;
+    grid-column: 1;
+    background-color: $primary-color;
+  }
+  &-context {
+    grid-area: context;
+    @include for-size(tablet-lg,up) {
+      grid-column: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+  
+  @include for-size(tablet-lg,up) {
+    grid-template-columns: 650px 1fr;
+    grid-template-rows: 1fr 175px;
+    grid-template-areas: 
+      "main context"
+      "media context";
+  }
+  @include for-size(desktop-lg,up) {
+    grid-template-columns: 800px 1fr;
+    grid-template-rows: 1fr 250px;
+  }
+  
+}
+
+// Typography
+.hero-main__text {
+  font-family: $primary-font;
+  color: $primary-color;
+  font-size: 24.5vw;
+  line-height: 0.55em;
+  width: 0;
+  @include for-size(tablet,up) {
+    font-size: 16vw;
+  }
+  @include for-size(tablet-lg,up) {
+    font-size: 10rem;
+  }
+  @include for-size(desktop-lg,up) {
+    font-size: 12rem;
+  }
+}
+
+.hero-context__text {
+  text-transform: uppercase;
+  font-family: $primary-font;
+  color: $primary-color;
+  font-size: 0.88rem;
+  line-height: 1.2em;
+}
